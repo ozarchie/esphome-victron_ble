@@ -283,7 +283,16 @@ enum class VICTRON_PRODUCT_ID : u_int16_t {
   BMV_710H_SMART = 0xA382,
   // BMV-712 Smart Rev2
   BMV_712_SMART_REV2 = 0xA383,
+
+// From: https://www.victronenergy.com/live/ve.direct:extra-manufacturer-data-2022-12-14.pdf
+//       https://gist.github.com/seidler2547/52f3e91cbcbf2fa257ae79371bb78588
+// 41865 = 0xA389
+// 41865 SmartShunt 500A/50mV
+// 41866 SmartShunt 1000A/50mV
+// 41867 SmartShunt 2000A/50mV
   // SmartShunt 500A/50mV
+  SMARTSHUNT_300A_50MV = 0xA388,      // A guess, not documented
+  // SmartShunt 300A/50mV
   SMARTSHUNT_500A_50MV = 0xA389,
   // SmartShunt 1000A/50mV
   SMARTSHUNT_1000A_50MV = 0xA38A,
@@ -291,6 +300,23 @@ enum class VICTRON_PRODUCT_ID : u_int16_t {
   SMARTSHUNT_2000A_50MV = 0xA38B,
   // Smart BuckBoost 12V/12V-50A
   SMART_BUCKBOOST_12V_12V_50A = 0xA3F0,
+
+  // From: https://www.victronenergy.com/live/ve.direct:extra-manufacturer-data-2022-12-14.pdf
+//       https://gist.github.com/seidler2547/52f3e91cbcbf2fa257ae79371bb78588
+// 41904 = 0xA3B0
+// 41904 Smart BatteryProtect 12/24V-65A
+// 41905 Smart BatteryProtect 12/24V-100A
+// 41906 Smart BatteryProtect 12/24V-220A
+// 41907 Smart BatteryProtect 48V-100A
+  // Smart BatteryProtect 12/24V-65A
+  SMART_BATTERY_PROTECT_12_24V_65A = 0xA3B0,
+  // Smart BatteryProtect 12/24V-100A
+  SMART_BATTERY_PROTECT_12_24V_100A = 0xA3B1,
+  // Smart BatteryProtect 12/24V-220A
+  SMART_BATTERY_PROTECT_12_24V_220A = 0xA3B2,
+  // Smart BatteryProtect 48V-100A
+  SMART_BATTERY_PROTECT_48V_100A = 0xA3B3,
+
 };
 
 struct VICTRON_BLE_MANUFACTURER_DATA {  // NOLINT(readability-identifier-naming,altera-struct-pack-align)
