@@ -18,6 +18,9 @@ void VictronBle::dump_config() {
 // Submit update to sensors & callbacks.
 void VictronBle::update() {
   if (this->last_package_updated_) {
+
+ESP_LOGD(TAG, "JMA: [%s] Received message.", this->address_str().c_str());
+
     this->last_package_updated_ = false;
     if (this->on_message_callback_.size() > 0) {
       this->defer("VictronBle0", [this]() { this->on_message_callback_.call(&this->last_package_); });
